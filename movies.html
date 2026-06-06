@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Anime Movies — Browse</title>
+<link rel="stylesheet" href="complete.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="brand">
+        <div class="logo">AM</div>
+        <div>
+            <div class="site-title">Anime Movies</div>
+            <div style="font-size:12px;color:var(--muted)">Browse • Trailers • Reviews</div>
+        </div>
+    </div>
+    <div class="nav-links">
+        <a href="home.html">Home</a>
+        <a href="movies.html" class="cta">Movies</a>
+        <a href="#">Top</a>
+        <a href="#">New</a>
+        <a href="#">Genres</a>
+    </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="header-box">
+    <h1>All Anime Movies</h1>
+    <p>Hover any title to preview — hold for 1 second to watch the trailer.</p>
+</div>
+
+<!-- MOVIE SECTIONS -->
+<main class="container">
+
+    <!-- Popular This Week -->
+    <section class="movie-section">
+        <h2 class="section-title">Popular This Week</h2>
+        <div class="movie-row">
+            <div class="card" data-trailer="https://www.youtube.com/embed/ByXuk9QqQkk">
+                <div class="thumb">
+                    <img class="poster" src="images/image 22.jfif" alt="Spirited Away">
+                    <iframe class="trailer" allowfullscreen></iframe>
+                </div>
+                <h3 class="title">Spirited Away</h3>
+                <div class="meta">Hayao Miyazaki • 2001 • Fantasy</div>
+            </div>
+
+            <div class="card" data-trailer="https://www.youtube.com/embed/xU47nhruN-Q">
+                <div class="thumb">
+                    <img class="poster" src="images/image 23.jfif" alt="Your Name">
+                    <iframe class="trailer" allowfullscreen></iframe>
+                </div>
+                <h3 class="title">Your Name</h3>
+                <div class="meta">Makoto Shinkai • 2016 • Romance / Sci-fi</div>
+            </div>
+
+            <div class="card" data-trailer="https://www.youtube.com/embed/nfK6UgLra7g">
+                <div class="thumb">
+                    <img class="poster" src="images/image 24.jfif" alt="A Silent Voice">
+                    <iframe class="trailer" allowfullscreen></iframe>
+                </div>
+                <h3 class="title">A Silent Voice</h3>
+                <div class="meta">Naoko Yamada • 2016 • Drama</div>
+            </div>
+            <div class="card" data-trailer="https://www.youtube.com/embed/4OiMOHRDs14">
+                <div class="thumb">
+                    <img class="poster" src="images/image 25.jfif" alt="Princess Mononoke">
+                    <iframe class="trailer" allowfullscreen></iframe>
+                </div>
+                <h3 class="title">Princess Mononoke</h3>
+                <div class="meta">Hayao Miyazaki • 1997 • Adventure</div>
+            </div>
+
+            <div class="card" data-trailer="https://www.youtube.com/embed/Q6iK6DjV_iE">
+                <div class="thumb">
+                    <img class="poster" src="images/image 26.jfif" alt="Weathering With You">
+                    <iframe class="trailer" allowfullscreen></iframe>
+                </div>
+                <h3 class="title">Weathering With You</h3>
+                <div class="meta">Makoto Shinkai • 2019 • Fantasy</div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Favorites -->
+    <section class="movie-section">
+        <h2 class="section-title">Favorites</h2>
+        
+    </section>
+
+</main>
+
+<script>
+// Trailer hover swap
+document.querySelectorAll(".card").forEach(card => {
+    let hoverTimer;
+    card.addEventListener("mouseenter", () => {
+        hoverTimer = setTimeout(() => {
+            card.classList.add("show-trailer");
+            card.querySelector("iframe.trailer").src = card.dataset.trailer + "?autoplay=1&controls=0&modestbranding=1";
+        }, 1000); // 1 second
+    });
+    card.addEventListener("mouseleave", () => {
+        clearTimeout(hoverTimer);
+        card.classList.remove("show-trailer");
+        card.querySelector("iframe.trailer").src = "";
+    });
+});
+</script>
+
+</body>
+</html>

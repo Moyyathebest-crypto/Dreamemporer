@@ -1,0 +1,263 @@
+/* ============================
+   GLOBAL STYLES
+============================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(180deg, #050814, #0b1020);
+    color: #eef2ff;
+    min-height: 100vh;
+}
+
+/* ============================
+   NAVIGATION BAR
+============================ */
+.navbar {
+    width: 100%;
+    padding: 16px 24px;
+    background: rgba(255,255,255,0.03);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-logo {
+    font-size: 22px;
+    font-weight: 700;
+    color: #ff6b6b;
+}
+
+.nav-links {
+    display: flex;
+    gap: 14px;
+}
+
+.nav-links a {
+    color: #ccd2e8;
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    transition: 0.2s ease;
+    font-size: 15px;
+}
+
+.nav-links a:hover {
+    background: rgba(255,255,255,0.1);
+    color: white;
+}
+
+/* ============================
+   HERO SECTION
+============================ */
+.hero {
+    width: 100%;
+    height: 360px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6);
+}
+
+.hero-text {
+    position: absolute;
+    text-align: center;
+    color: white;
+}
+
+.hero-text h1 {
+    font-size: 42px;
+    font-weight: 800;
+}
+
+.hero-text p {
+    font-size: 18px;
+    opacity: 0.85;
+    margin-top: 6px;
+}
+
+/* ============================
+   SECTIONS
+============================ */
+.section {
+    padding: 40px 24px;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+/* ============================
+   MOVIE ROWS (REPLACED MOVIE CSS)
+============================ */
+.movie-section {
+    padding: 20px;
+}
+
+.movie-row {
+    display: flex;
+    gap: 14px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    scroll-behavior: smooth;
+}
+
+.movie-row::-webkit-scrollbar {
+    height: 8px;
+}
+
+.movie-row::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.2);
+    border-radius: 4px;
+}
+
+.card {
+    min-width: 160px;
+    flex: 0 0 auto;
+    background: #0f1724;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.06);
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    overflow: hidden;
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.55);
+}
+
+.thumb {
+    width: 100%;
+    height: 230px;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.poster {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.35s ease;
+}
+
+.card:hover .poster {
+    transform: scale(1.12);
+}
+
+.trailer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: none;
+    border-radius: 10px;
+}
+
+.card.show-trailer .poster {
+    display: none;
+}
+
+.card.show-trailer .trailer {
+    display: block;
+}
+
+.title {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 8px 0 4px;
+}
+
+.meta {
+    font-size: 13px;
+    color: #9aa4bf;
+}
+
+/* ============================
+   WIDE BANNER
+============================ */
+.big-banner img {
+    width: 100%;
+    border-radius: 12px;
+    margin-top: 30px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.45);
+}
+
+/* ============================
+   FOOTER
+============================ */
+footer {
+    text-align: center;
+    padding: 24px 0;
+    margin-top: 50px;
+    background: rgba(255,255,255,0.03);
+    border-top: 1px solid rgba(255,255,255,0.04);
+}
+
+footer p {
+    color: #98a3c7;
+}
+
+.footer-links a {
+    color: #69d4ff;
+    text-decoration: none;
+    margin: 0 8px;
+    transition: 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+/* ============================
+   RESPONSIVE
+============================ */
+@media (max-width: 700px) {
+    .hero-text h1 { font-size: 32px; }
+    .hero-text p { font-size: 16px; }
+    .nav-links { display: none; }
+}
+
+@media (max-width: 420px) {
+    .hero { height: 280px; }
+    .hero-text h1 { font-size: 26px; }
+    .movie-row {
+        gap: 10px;
+    }
+}
+.para {
+    max-width: 900px;        
+    margin: 50px auto;       
+    line-height: 1.6;        
+    padding: 20px;           
+    box-sizing: border-box;  
+    text-align: left;        /* Align text to the left instead of center */
+    text-indent: 20px;       /* Indent the first line of each paragraph */
+    border-radius: 10px;     /* Rounded corners */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* Subtle shadow */
+    font-family: Arial, sans-serif; /* Clean readable font */
+}

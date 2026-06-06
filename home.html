@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dream emporer</title>
+
+  <!-- IMPORTANT: set href to the CSS file you replaced.
+       If you replaced "home.css" use that filename. If you replaced "style.css" use that. -->
+  <link rel="stylesheet" href="complete.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="nav-logo">Dream<span style="color:#ffd166">emporer</span></div>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="home.html">Home</a>
+      <a href="#">New</a>
+      <a href="movies.html">Movies</a>
+      <a href="#">Series</a>
+      <a href="#" class="cta">Subscribe</a>
+      <a href="friends.html">friends</a>
+      <a href="about.html">about</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" role="banner">
+    <!-- Use your hero image filename (hero.png) or change path as needed -->
+    <img src="images/image 2.jpg" alt="Hero banner" />
+    <div class="hero-text">
+      <h1>Discover your next favourite anime</h1>
+      <p>Curated movies, trending series and staff picks — all in one place.</p>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <section class="section">
+      <h2 class="section-title">Trending Now</h2>
+
+      <div class="anime-grid" aria-live="polite">
+        <!-- Repeat these cards for each item, update img src to your poster files -->
+        <article class="card">
+          <img src="posters/poster1.jpg" alt="Poster 1">
+          <p>Title One</p>
+        </article>
+
+        <article class="card">
+          <img src="posters/poster2.jpg" alt="Poster 2">
+          <p>Title Two</p>
+        </article>
+
+        <article class="card">
+          <img src="posters/poster3.jpg" alt="Poster 3">
+          <p>Title Three</p>
+        </article>
+
+        <article class="card">
+          <img src="posters/poster4.jpg" alt="Poster 4">
+          <p>Title Four</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Featured</h2>
+      <div class="big-banner">
+        <img src="banners/featured.jpg" alt="Featured banner" />
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© <span id="year"></span> DreamEmp • All rights reserved.</p>
+    <div class="footer-links">
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="#">Contact</a>
+    </div>
+  </footer>
+
+  <script>
+    // small nicety: auto-fill year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // optional: basic console log if CSS didn't load (helpful for debugging)
+    window.addEventListener('load', () => {
+      const rule = getComputedStyle(document.body).backgroundImage || '';
+      if (!rule || rule === 'none') {
+        console.log('INFO: page loaded — check that "home.css" exists and the <link> href is correct.');
+      }
+    });
+  </script>
+</body>
+</html>
